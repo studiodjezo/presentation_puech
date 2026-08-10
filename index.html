@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Présentation Stratégique & Créative | FLORIAN PUECH</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Format 1452';
+            src: url('../../../01 - MOTEUR/templates/assets/fonts/Format_1452.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        :root {
+            --bg-dark: #070708;
+            --bg-card: #0F0F11;
+            --text-main: #E2E2E6;
+            --text-muted: #8E8E9A;
+            --accent-orange: #FD3A20;
+            --accent-red: #E60000;
+            --accent-silver: #F2F2F2;
+            --font-space: 'Space Grotesk', sans-serif;
+            --font-barlow: 'Barlow', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-barlow);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header avec Effet de Fusion (Mix-Blend-Mode) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            mix-blend-mode: difference;
+            pointer-events: none; /* Permet de cliquer à travers le header */
+            box-sizing: border-box;
+        }
+
+        .logo-container {
+            height: 32px;
+            pointer-events: auto; /* Rétablit le clic sur le logo */
+        }
+
+        .logo-container img {
+            height: 100%;
+            width: auto;
+        }
+
+        .context-tag {
+            font-family: var(--font-space);
+            font-size: 8pt;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 5% 5rem 5%;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-space);
+            font-weight: 700;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 0.95;
+            margin-bottom: 1.5rem;
+            color: #FFF;
+        }
+
+        h1 span {
+            color: var(--accent-orange);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 5rem;
+            font-weight: 400;
+        }
+
+        /* Section Stratégie (Synthèse Pédagogique) */
+        .strategy-section {
+            background: linear-gradient(135deg, #0a0a0c 0%, #111114 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 4rem;
+            margin-bottom: 8rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .strategy-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .strategy-header h2 {
+            font-size: 2.5rem;
+            color: #FFF;
+            margin-bottom: 1rem;
+        }
+
+        .strategy-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .strategy-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .strategy-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strategy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-orange);
+            opacity: 0.5;
+        }
+
+        .strategy-card:nth-child(2)::before { background: #FC21A5; }
+        .strategy-card:nth-child(3)::before { background: #2179FC; }
+
+        .strategy-card-icon {
+            font-family: var(--font-space);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.1);
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            line-height: 1;
+        }
+
+        .strategy-card h3 {
+            font-size: 1.3rem;
+            color: #FFF;
+            margin-bottom: 1rem;
+        }
+
+        .strategy-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .strategy-card strong {
+            display: block;
+            font-family: var(--font-space);
+            font-size: 0.85rem;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .strategy-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .strategy-card ul li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-main);
+        }
+
+        .strategy-card ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+        }
+
+        /* Section Moodboards */
+        .axes-intro {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .axes-intro h2 {
+            font-size: 3rem;
+            color: #FFF;
+        }
+
+        .axes-intro p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 1rem auto 0;
+        }
+
+        .axes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
+            margin-bottom: 8rem;
+        }
+
+        .axe-row {
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 1024px) {
+            .axe-row {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        .axe-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .axe-kicker {
+            font-family: var(--font-space);
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--accent-orange);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .axe-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: #FFF;
+        }
+
+        .axe-concept {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 2.5rem;
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .axe-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .meta-item strong {
+            display: block;
+            font-family: var(--font-space);
+            font-size: 9.5pt;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .axe-visual-wrapper {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.4s ease, transform 0.4s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-family: var(--font-space);
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .axe-visual-wrapper::after {
+            content: "Déposez votre Moodboard ici";
+            position: absolute;
+            opacity: 0.3;
+            font-weight: 600;
+        }
+
+        .axe-visual-wrapper:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        }
+
+        .axe-visual-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Ingénierie du Signe */
+        .engineering {
+            background: #0F0F11;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 6rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .engineering-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .engineering-content h2 {
+            font-size: 2.5rem;
+            color: #FFF;
+            margin-bottom: 2rem;
+        }
+
+        .engineering-content p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 0;
+            font-family: var(--font-space);
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* ==========================================================================
+           REFONTE ELITE AGENCY : COMPOSANTS VISUELS & ANATOMIE
+           ========================================================================== */
+
+        /* Smart Cursor personnalisé */
+        .custom-cursor {
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transform: translate(-50%, -50%);
+            transition: width 0.25s ease-out, height 0.25s ease-out, background-color 0.25s ease-out;
+            display: none;
+        }
+        
+        .custom-cursor.hovered {
+            width: 48px;
+            height: 48px;
+            background-color: var(--accent-orange);
+        }
+
+        /* Gradients atmosphériques */
+        .ambient-glow {
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(253, 58, 32, 0.035) 0%, rgba(0,0,0,0) 70%);
+            pointer-events: none;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            filter: blur(80px);
+            animation: glow-pulse 12s infinite alternate ease-in-out;
+        }
+        
+        @keyframes glow-pulse {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            100% { transform: translate(-45%, -45%) scale(1.15); opacity: 0.7; }
+        }
+
+        /* Anatomie de l'Axe */
+        .anatomy-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 640px) {
+            .anatomy-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .anatomy-card {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 120px;
+        }
+        
+        .anatomy-card-title {
+            font-family: var(--font-space);
+            font-size: 8pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Spécimen Typo */
+        .specimen-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        
+        .specimen-glyph {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #FFF;
+            line-height: 1;
+        }
+        
+        .specimen-meta {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .specimen-name {
+            font-family: var(--font-space);
+            font-size: 1rem;
+            font-weight: 600;
+            color: #FFF;
+            letter-spacing: -0.01em;
+        }
+        
+        .specimen-role {
+            font-size: 8pt;
+            color: var(--text-muted);
+            margin-top: 0.1rem;
+        }
+        
+        /* Palette visuelle */
+        .palette-wrapper {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .palette-pill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            flex: 1;
+        }
+        
+        .palette-color {
+            width: 100%;
+            height: 36px;
+            border-radius: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .palette-color::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.15) 100%);
+            border-radius: 4px;
+        }
+        
+        .palette-weight {
+            font-family: var(--font-space);
+            font-size: 7.5pt;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+        
+        /* Motion Easing */
+        .motion-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        
+        .motion-preview {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .motion-indicator-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: absolute;
+            left: 6px;
+            animation-duration: 2.2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        
+        /* Animations de courbes de mouvement */
+        @keyframes ease-brutal {
+            0%, 15% { left: 6px; }
+            35%, 65% { left: calc(100% - 14px); }
+            85%, 100% { left: 6px; }
+        }
+        
+        @keyframes ease-cinematic {
+            0% { left: 6px; animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1); }
+            50% { left: calc(100% - 14px); animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1); }
+            100% { left: 6px; }
+        }
+        
+        @keyframes ease-organic {
+            0% { left: 6px; animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+            50% { left: calc(100% - 14px); animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+            100% { left: 6px; }
+        }
+        
+        .motion-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .motion-name {
+            font-family: var(--font-space);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #FFF;
+        }
+        
+        .motion-desc {
+            font-size: 7.5pt;
+            color: var(--text-muted);
+            margin-top: 0.1rem;
+        }
+        
+        /* Archétype & Verbal */
+        .verbal-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .archetype-badge {
+            display: inline-block;
+            background: rgba(253, 58, 32, 0.08);
+            border: 1px solid rgba(253, 58, 32, 0.2);
+            color: var(--accent-orange);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-family: var(--font-space);
+            font-size: 7pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            align-self: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .verbal-quote {
+            font-size: 9pt;
+            font-style: italic;
+            color: var(--text-main);
+            line-height: 1.4;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-left: 0.6rem;
+            margin: 0;
+        }
+        
+        /* Formulaire de Feedback Haute Couture */
+        .feedback-section {
+            background: linear-gradient(135deg, #0a0a0c 0%, #101013 100%);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 12px;
+            padding: 4rem;
+            margin-bottom: 6rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 900px) {
+            .feedback-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        .feedback-card {
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: left;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .feedback-card:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+        
+        .feedback-card.selected {
+            border-color: var(--accent-orange);
+            background: rgba(253, 58, 32, 0.02);
+        }
+        
+        .feedback-card.selected::after {
+            content: '✓ SELECTIONNÉ';
+            position: absolute;
+            top: 1rem;
+            right: 1.2rem;
+            font-family: var(--font-space);
+            font-size: 7pt;
+            font-weight: 700;
+            color: var(--accent-orange);
+            letter-spacing: 0.15em;
+        }
+
+        .feedback-card:nth-child(2).selected {
+            border-color: var(--accent-red);
+            background: rgba(230, 0, 0, 0.02);
+        }
+        .feedback-card:nth-child(2).selected::after {
+            color: var(--accent-red);
+        }
+
+        .feedback-card:nth-child(3).selected {
+            border-color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .feedback-card:nth-child(3).selected::after {
+            color: #FFFFFF;
+        }
+        
+        .feedback-card h3 {
+            font-size: 1.15rem;
+            color: #FFF;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+        
+        .feedback-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+        
+        .slider-container {
+            margin-top: 1.5rem;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 7pt;
+            font-family: var(--font-space);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .slider-bar {
+            width: 100%;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slider-fill {
+            height: 100%;
+            background: var(--accent-orange);
+            border-radius: 2px;
+        }
+        
+        .feedback-card:nth-child(2) .slider-fill { background: var(--accent-red); }
+        .feedback-card:nth-child(3) .slider-fill { background: #FFFFFF; }
+
+        /* Division en Parties */
+        .presentation-part-title {
+            text-align: center;
+            margin: 8rem 0 4rem;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .presentation-part-title span {
+            font-family: var(--font-space);
+            font-size: 10pt;
+            font-weight: 700;
+            color: var(--accent-orange);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        
+        .presentation-part-title h2 {
+            font-size: 3.5rem;
+            color: #FFF;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .presentation-part-title p {
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grilles Moodboards */
+        .moodboard-section {
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
+            margin-bottom: 8rem;
+        }
+
+        .moodboard-row {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .moodboard-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .moodboard-header {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .moodboard-concept-box {
+            border-left: 3px solid var(--accent-orange);
+            padding-left: 1.5rem;
+        }
+
+        .moodboard-row:nth-child(2) .moodboard-concept-box { border-left-color: var(--accent-red); }
+        .moodboard-row:nth-child(3) .moodboard-concept-box { border-left-color: #FFFFFF; }
+
+        .moodboard-concept-box p {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: #FFF;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .moodboard-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(2, 220px);
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .moodboard-grid {
+                grid-template-rows: repeat(2, 160px);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .moodboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+                gap: 1rem;
+            }
+            .mb-item-1, .mb-item-2, .mb-item-3, .mb-item-4, .mb-item-5 {
+                grid-column: span 2 !important;
+                height: 220px;
+                position: relative;
+            }
+        }
+
+        .moodboard-grid-item {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.015);
+            border: 1px dashed rgba(255, 255, 255, 0.08);
+            transition: border-color 0.3s ease, background 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .moodboard-grid-item:hover {
+            border-color: var(--accent-orange);
+            background: rgba(253, 58, 32, 0.02);
+        }
+
+        .moodboard-row:nth-child(2) .moodboard-grid-item:hover {
+            border-color: var(--accent-red);
+            background: rgba(230, 0, 0, 0.02);
+        }
+        .moodboard-row:nth-child(3) .moodboard-grid-item:hover {
+            border-color: #FFFFFF;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .mb-item-1 { grid-column: span 6; grid-row: span 2; }
+        .mb-item-2 { grid-column: span 3; grid-row: span 1; }
+        .mb-item-3 { grid-column: span 3; grid-row: span 1; }
+        .mb-item-4 { grid-column: span 3; grid-row: span 1; }
+        .mb-item-5 { grid-column: span 3; grid-row: span 1; }
+
+        .moodboard-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .moodboard-grid-item:hover .moodboard-img {
+            transform: scale(1.03);
+        }
+
+        .moodboard-blueprint {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 1.5rem;
+            box-sizing: border-box;
+            color: var(--text-muted);
+            font-family: var(--font-space);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .blueprint-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.15);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        /* Pinterest Click-to-Search Tags */
+        .pinterest-queries-box {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .pinterest-title {
+            font-size: 0.8rem;
+            font-family: var(--font-space);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+        .queries-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .query-tag {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            color: #FFF;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: var(--font-space);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            user-select: none;
+        }
+        .query-tag::before {
+            content: '📌';
+            font-size: 0.75rem;
+            filter: grayscale(1);
+            transition: filter 0.3s ease;
+        }
+        .query-tag:hover {
+            background: rgba(230, 0, 35, 0.08);
+            border-color: rgba(230, 0, 35, 0.3);
+            color: #ff4d5e;
+            transform: translateY(-2px);
+        }
+        .query-tag:hover::before {
+            filter: grayscale(0);
+        }
+
+        /* Focus Group & Market Simulation */
+        .focus-group-section {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.015) 0%, rgba(255, 255, 255, 0) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 24px;
+            padding: 4rem 2.5rem;
+            margin-top: 6rem;
+            margin-bottom: 4rem;
+        }
+        .personas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        @media (max-width: 992px) {
+            .personas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .persona-card {
+            background: rgba(255, 255, 255, 0.005);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 2.25rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .persona-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.015);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .persona-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .persona-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-space);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #FFF;
+        }
+        .persona-meta h3 {
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        .persona-title {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .persona-psychology {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1rem;
+        }
+        .scores-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .score-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            font-family: var(--font-space);
+        }
+        .score-row span:first-child {
+            width: 140px;
+            color: var(--text-muted);
+        }
+        .score-bar {
+            flex-grow: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+        .score-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 1s ease-in-out;
+        }
+        .persona-card:nth-child(1) .score-fill { background: var(--accent-red); }
+        .persona-card:nth-child(2) .score-fill { background: #E60000; }
+        .persona-card:nth-child(3) .score-fill { background: #D4A373; }
+        
+        .score-number {
+            font-weight: 600;
+        }
+        .persona-critique {
+            margin-top: auto;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.02);
+            display: none;
+            animation: fadeIn 0.4s ease forwards;
+        }
+        .persona-critique.active {
+            display: block;
+        }
+        .critique-kicker {
+            font-size: 0.75rem;
+            font-family: var(--font-space);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-red);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .persona-card:nth-child(3) .critique-kicker {
+            color: #D4A373;
+        }
+        .critique-quote {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .axis-selector-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            width: fit-content;
+            margin: 2.5rem auto 0;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .axis-filter-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-family: var(--font-space);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .axis-filter-btn:hover {
+            color: #FFF;
+        }
+        .axis-filter-btn.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFF;
+        }
+
+        /* Brand Sandbox */
+        .sandbox-section {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 4rem 3rem;
+            position: relative;
+            overflow: hidden;
+            margin-top: 4rem;
+        }
+        .sandbox-input-wrapper {
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            position: relative;
+        }
+        .sandbox-input-wrapper input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 1rem 1.5rem;
+            font-family: var(--font-space);
+            font-size: 1.25rem;
+            color: #FFF;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-sizing: border-box;
+        }
+        .sandbox-input-wrapper input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 20px rgba(253, 58, 32, 0.1);
+        }
+        .sandbox-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        @media (max-width: 1024px) {
+            .sandbox-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .sandbox-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 6px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        .sandbox-card:hover {
+            border-color: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .sandbox-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .sandbox-card-header h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+        .sandbox-axe-num {
+            font-family: var(--font-space);
+            font-weight: 700;
+            font-size: 0.8rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .sandbox-preview-box {
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        .sandbox-display-text {
+            transition: all 0.15s ease;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 90%;
+            text-align: center;
+        }
+        
+        /* Axe 1 specific styling inside sandbox */
+        [data-sandbox-axe="1"] .sandbox-display-text {
+            font-family: var(--font-space);
+            font-weight: 700;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            color: #FFF;
+        }
+        
+        /* Axe 2 specific styling inside sandbox */
+        [data-sandbox-axe="2"] .sandbox-display-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 400;
+            font-style: italic;
+            font-size: 2.5rem;
+            text-transform: none;
+            letter-spacing: 0.05em;
+            color: #1A1A1A;
+            border: none;
+            padding: 0;
+        }
+        
+        /* Axe 3 specific styling inside sandbox */
+        [data-sandbox-axe="3"] .sandbox-display-text {
+            font-family: 'Arial Black', Impact, sans-serif;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            color: #FF2A00;
+            text-shadow: 2px 2px 0px #EAEAEA;
+        }
+        
+        .sandbox-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Asset Placeholders */
+        .assets-placeholders {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 4rem;
+        }
+        .placeholder-box {
+            flex: 1;
+            height: 250px;
+            border: 2px dashed rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.02),
+                rgba(255, 255, 255, 0.02) 10px,
+                rgba(255, 255, 255, 0) 10px,
+                rgba(255, 255, 255, 0) 20px
+            );
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: border-color 0.3s ease;
+        }
+        .placeholder-box:hover {
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Sandbox V2.0 Controls */
+        .sandbox-presets {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .preset-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 0.4rem 1rem;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-family: var(--font-space);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+        }
+        .preset-btn:hover {
+            color: #FFF;
+            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .preset-btn.active {
+            color: var(--accent-orange);
+            border-color: var(--accent-orange);
+            background: rgba(253, 58, 32, 0.05);
+        }
+
+        .sandbox-font-selector {
+            display: flex;
+            gap: 2px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2px;
+        }
+        .font-toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            padding: 0.25rem 0.6rem;
+            font-size: 0.65rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: var(--font-space);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.2s ease;
+        }
+        .font-toggle-btn:hover {
+            color: #FFF;
+        }
+        .font-toggle-btn.active {
+            background: rgba(255, 255, 255, 0.08);
+            color: #FFF;
+        }
+
+        .sandbox-color-selector {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .color-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-sizing: border-box;
+        }
+        .color-dot:hover {
+            transform: scale(1.2);
+        }
+        .color-dot.active {
+            transform: scale(1.25);
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Specific text adaptations when switching styles */
+        [data-sandbox-axe="1"] .sandbox-display-text.font-secondary {
+            font-family: var(--font-barlow);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        [data-sandbox-axe="2"] .sandbox-display-text.font-secondary {
+            font-family: 'Helvetica Neue', Helvetica, sans-serif;
+            font-style: normal;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        [data-sandbox-axe="3"] .sandbox-display-text.font-secondary {
+            font-family: 'Permanent Marker', 'Comic Sans MS', cursive, sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            transform: rotate(-3deg);
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fond Atmosphérique Dégradé -->
+    <div class="ambient-glow"></div>
+
+    <!-- Header avec Effet de Fusion (Mix-Blend-Mode) -->
+    <header>
+        <div class="logo-container">
+            <a href="https://studiodjezo.com" target="_blank">
+                <!-- Chemin relatif calculé pour s'adapter au _TEMPLATE_PROJET -->
+                <img src="../../../01 - MOTEUR/templates/assets/sd-logo-full-vibrant-chalk.svg" alt="Studio Djezo" />
+            </a>
+        </div>
+        <div class="context-tag">Phase Stratégique & Créative</div>
+    </header>
+
+    <div class="container">
+        <h1>Identité Visuelle <span>&</span> Stratégie de Marque</h1>
+        <p class="subtitle">Ce document synthétise notre phase d'analyse approfondie et vous présente les 3 directions artistiques qui en découlent pour la nouvelle identité de FLORIAN PUECH.</p>
+
+        <!-- NOUVELLE SECTION : SYNTHÈSE STRATÉGIQUE PÉDAGOGIQUE -->
+        <div class="strategy-section">
+            <div class="strategy-header">
+                <h2>Pourquoi cette approche ?</h2>
+                <p>Avant de dessiner le moindre logo, nous avons audité votre marché, vos cibles et votre ADN. Une identité visuelle forte n'est pas qu'un choix esthétique : c'est un outil stratégique conçu pour atteindre vos objectifs commerciaux.</p>
+            </div>
+
+            <div class="strategy-grid">
+                <!-- Bloc 1 : Le Constat (Marché & Concurrence) -->
+                <div class="strategy-card">
+                    <div class="strategy-card-icon">01</div>
+                    <h3>Le Constat du Marché</h3>
+                    <p>Le marché est saturé par l'esthétique lisse du "photographe-entrepreneur". Il y a un vide pour une approche d'auteur, viscérale, qui ne s'excuse pas et montre la réalité brute (grain, flash, imperfection).</p>
+                    <strong>Opportunités Identifiées</strong>
+                    <ul>
+                        <li>L'imperfection comme signature (argentique)</li>
+                        <li>Refus du personal branding aseptisé</li>
+                        <li>Contraste fort Mode vs Subculture (Ultras)</li>
+                    </ul>
+                </div>
+
+                <!-- Bloc 2 : La Cible (Personas) -->
+                <div class="strategy-card">
+                    <div class="strategy-card-icon">02</div>
+                    <h3>Votre Cible Principale</h3>
+                    <p>Les Directeurs Artistiques mode et les Producteurs audiovisuels. Ils cherchent un oeil neuf, capable de capturer la tension d'un instant plutôt qu'une composition parfaite et sans âme.</p>
+                    <strong>Ce qu'ils recherchent</strong>
+                    <ul>
+                        <li>L'authenticité du live et du réel</li>
+                        <li>Une véritable vision d'auteur</li>
+                        <li>L'énergie brute (concerts, ultras)</li>
+                    </ul>
+                </div>
+
+                <!-- Bloc 3 : La Promesse (Positionnement) -->
+                <div class="strategy-card">
+                    <div class="strategy-card-icon">03</div>
+                    <h3>Votre Positionnement</h3>
+                    <p>"L'image ne se fabrique pas, elle s'arrache au réel." Une marque qui documente sans artifices, avec une approche cinématographique empruntée à Euphoria et Eddy Chen.</p>
+                    <strong>Mots d'ordre de la création</strong>
+                    <ul>
+                        <li>BRUT ET SANS FILTRE</li>
+                        <li>CINÉMATOGRAPHIQUE</li>
+                        <li>L'ESTHÉTIQUE DE LA RUE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARTIE I : EXPLORATION ESTHÉTIQUE -->
+        <div class="presentation-part-title">
+            <span>Partie I</span>
+            <h2>L'Exploration Esthétique</h2>
+            <p>Recherche d'atmosphères visuelles, territoires de marques et planches d'inspirations (Moodboards).</p>
+        </div>
+
+        <div class="moodboard-section">
+            <!-- AXE 1 MOODBOARD -->
+            <div class="moodboard-row">
+                <div class="moodboard-header">
+                    <div>
+                        <div class="axe-kicker">Axe 01</div>
+                        <h3 class="axe-title" style="margin-bottom: 1rem;">L'ARCHIVE NUMÉRIQUE</h3>
+                        <div class="moodboard-concept-box">
+                            <p>"L'ambiance laboratoire photo, technique, brute. On archive le réel."</p>
+                        </div>
+                    </div>
+                    <div style="padding-top: 1.5rem;">
+                        <strong>L'Intention Esthétique</strong>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-top: 0.5rem;">
+                            Une approche qui documente le réel sans l'altérer. L'émotion naît du contraste entre la rigueur de la mise en page (grille de laboratoire) et la spontanéité des clichés (grain, flou).
+                        </p>
+                        <div class="pinterest-queries-box">
+                            <span class="pinterest-title">🔍 Mots-clés Pinterest (Clic pour chercher) :</span>
+                            <div class="queries-tags">
+                                <span class="query-tag" data-query="dark brutalism ui">#[Tag 1]</span>
+                                <span class="query-tag" data-query="acid green typography">#[Tag 2]</span>
+                                <span class="query-tag" data-query="archive photo layout">#[Tag 3]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="moodboard-grid" style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    <div class="moodboard-grid-item" style="grid-column: span 2; grid-row: span 2; height: 420px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/08106da755091411d92e852bffa0cd6d.jpg" alt="Axe 1 - Ref 01" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">01</span>
+                            <span class="blueprint-label">Réf. Argentique (08106da7...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/2a1ddf43c3ecea949f7ab1292204ee8f.jpg" alt="Axe 1 - Ref 02" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">02</span>
+                            <span class="blueprint-label">Réf. Argentique (2a1ddf43...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/4c9bb232b6fe14273700675dc3643e09.jpg" alt="Axe 1 - Ref 03" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">03</span>
+                            <span class="blueprint-label">Réf. Argentique (4c9bb232...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/607d1d457cf65e202246b5b71c7f158e.jpg" alt="Axe 1 - Ref 04" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">04</span>
+                            <span class="blueprint-label">Réf. Argentique (607d1d45...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/6643af7e48b506a99981db72f2117fd4.jpg" alt="Axe 1 - Ref 05" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">05</span>
+                            <span class="blueprint-label">Réf. Argentique (6643af7e...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/7bc07d608321c94126574968e26c8575.jpg" alt="Axe 1 - Ref 06" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">06</span>
+                            <span class="blueprint-label">Réf. Argentique (7bc07d60...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/8c014b4b4c6418164700d25131848b3b.jpg" alt="Axe 1 - Ref 07" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">07</span>
+                            <span class="blueprint-label">Réf. Argentique (8c014b4b...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/bcac56f2a5503c7046f49ca332368940.jpg" alt="Axe 1 - Ref 08" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">08</span>
+                            <span class="blueprint-label">Réf. Argentique (bcac56f2...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="01 - AXE 1/d253f4d555f99c2421b9886043742efa.jpg" alt="Axe 1 - Ref 09" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">09</span>
+                            <span class="blueprint-label">Réf. Argentique (d253f4d5...)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AXE 2 MOODBOARD -->
+            <div class="moodboard-row">
+                <div class="moodboard-header">
+                    <div>
+                        <div class="axe-kicker" style="color: var(--accent-red);">Axe 02</div>
+                        <h3 class="axe-title" style="margin-bottom: 1rem;">LE MAGAZINE INDÉPENDANT</h3>
+                        <div class="moodboard-concept-box">
+                            <p>"L'espace, le blanc, le silence autour de l'image. Le beau livre d'art éditorial."</p>
+                        </div>
+                    </div>
+                    <div style="padding-top: 1.5rem;">
+                        <strong>L'Intention Esthétique</strong>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-top: 0.5rem;">
+                            Une poétique du vide et de la contemplation. Ici, la photographie respire profondément. L'univers s'inspire de la mise en page des livres d'art et magazines indépendants premium (type Kinfolk, Cereal), mariant des empattements légers à une structure épurée pour conférer à chaque cliché argentique un statut de chef-d'œuvre.
+                        </p>
+                        <div class="pinterest-queries-box">
+                            <span class="pinterest-title">🔍 Mots-clés Pinterest (Clic pour chercher) :</span>
+                            <div class="queries-tags">
+                                <span class="query-tag" data-query="editorial photo layout">#[Tag 1]</span>
+                                <span class="query-tag" data-query="minimalist typography portfolio">#[Tag 2]</span>
+                                <span class="query-tag" data-query="white space design">#[Tag 3]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="moodboard-grid" style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    <div class="moodboard-grid-item" style="grid-column: span 2; grid-row: span 2; height: 420px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="02 - AXE 2/15637a59f5c0c02462518218bb00f21e.jpg" alt="Axe 2 - Ref 01" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">01</span>
+                            <span class="blueprint-label">Réf. Argentique (15637a59...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="02 - AXE 2/32cf5da19fd6b9c68e43dad2d9350e6a.jpg" alt="Axe 2 - Ref 02" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">02</span>
+                            <span class="blueprint-label">Réf. Argentique (32cf5da1...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="02 - AXE 2/950fcef1ae9028dda770ac5ae052bec3.jpg" alt="Axe 2 - Ref 03" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">03</span>
+                            <span class="blueprint-label">Réf. Argentique (950fcef1...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="02 - AXE 2/b098496cdf888adcc532995ee1f5cf26.jpg" alt="Axe 2 - Ref 04" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">04</span>
+                            <span class="blueprint-label">Réf. Argentique (b098496c...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="02 - AXE 2/ce34101b572adda6204d7d366699418b.jpg" alt="Axe 2 - Ref 05" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">05</span>
+                            <span class="blueprint-label">Réf. Argentique (ce34101b...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="02 - AXE 2/magazine.jpg" alt="Axe 2 - Ref 06" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">06</span>
+                            <span class="blueprint-label">Réf. Argentique (magazine...)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AXE 3 MOODBOARD -->
+            <div class="moodboard-row">
+                <div class="moodboard-header">
+                    <div>
+                        <div class="axe-kicker" style="color: #FFFFFF;">Axe 03</div>
+                        <h3 class="axe-title" style="margin-bottom: 1rem;">LE FANZINE UNDERGROUND</h3>
+                        <div class="moodboard-concept-box">
+                            <p>"L'urgence du moment, le fait-main, la subculture et la texture brute."</p>
+                        </div>
+                    </div>
+                    <div style="padding-top: 1.5rem;">
+                        <strong>L'Intention Esthétique</strong>
+                        <p style="color: var(--text-muted); line-height: 1.6; margin-top: 0.5rem;">
+                            L'énergie viscérale de la subculture et de la rue. Cet axe embrasse les imperfections physiques : textures de papier journal, collages désaxés, et flashs saturés typiques des fanzines musicaux et des mouvements de supporters (Ultras). C'est direct, instinctif, puissant et profondément authentique.
+                        </p>
+                        <div class="pinterest-queries-box">
+                            <span class="pinterest-title">🔍 Mots-clés Pinterest (Clic pour chercher) :</span>
+                            <div class="queries-tags">
+                                <span class="query-tag" data-query="punk zine layout">#[Tag 1]</span>
+                                <span class="query-tag" data-query="high contrast gritty typography">#[Tag 2]</span>
+                                <span class="query-tag" data-query="marker handwriting font">#[Tag 3]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="moodboard-grid" style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    <div class="moodboard-grid-item" style="grid-column: span 2; grid-row: span 2; height: 420px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/0285cc8a18f44fe7ec350e502310d29f.jpg" alt="Axe 3 - Ref 01" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">01</span>
+                            <span class="blueprint-label">Réf. Argentique (0285cc8a...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/15928058c4650a40b50b21070af97791.jpg" alt="Axe 3 - Ref 02" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">02</span>
+                            <span class="blueprint-label">Réf. Argentique (15928058...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/28db3f3a8c908904137d1c203ec2b872.jpg" alt="Axe 3 - Ref 03" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">03</span>
+                            <span class="blueprint-label">Réf. Argentique (28db3f3a...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/2bee2ae50a00ff83430ae9f470d2cfc7.jpg" alt="Axe 3 - Ref 04" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">04</span>
+                            <span class="blueprint-label">Réf. Argentique (2bee2ae5...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/5fefe878826c4ff9a6df066725433c71.jpg" alt="Axe 3 - Ref 05" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">05</span>
+                            <span class="blueprint-label">Réf. Argentique (5fefe878...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/76dce5dee3fbc17a2218315d89cbeb67.jpg" alt="Axe 3 - Ref 06" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">06</span>
+                            <span class="blueprint-label">Réf. Argentique (76dce5de...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/c26965f09a3276f0f774fc68283bcbe4.jpg" alt="Axe 3 - Ref 07" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">07</span>
+                            <span class="blueprint-label">Réf. Argentique (c26965f0...)</span>
+                        </div>
+                    </div>
+                    <div class="moodboard-grid-item" style="height: 200px; overflow: hidden; position: relative; border-radius: 4px;">
+                        <img src="03 - AXE 3/de9e1a0193f1d6897fc6537691de1ea1.jpg" alt="Axe 3 - Ref 08" onerror="this.style.display='none';" class="moodboard-img" style="width: 100%; height: 100%; object-fit: cover;" />
+                        <div class="moodboard-blueprint">
+                            <span class="blueprint-number">08</span>
+                            <span class="blueprint-label">Réf. Argentique (de9e1a01...)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PARTIE II : LES SYSTÈMES GRAPHIQUES -->
+        <div class="presentation-part-title" style="margin-top: 10rem;">
+            <span>Partie II</span>
+            <h2>Les Systèmes Graphiques</h2>
+            <p>Cette section traduit les intentions stratégiques et les moodboards en règles visuelles concrètes. Ce ne sont pas encore les visuels finaux (qui viendront en phase 3), mais les "briques de construction" (typographies, couleurs, comportements) qui serviront à fabriquer toute l'identité de marque. <strong>Découvrez le 'Pourquoi' derrière chaque choix.</strong></p>
+        </div>
+
+        <div class="axes-container">
+            <!-- AXE 1 -->
+            <div class="axe-row">
+                <div class="axe-info">
+                    <div class="axe-kicker">Axe 01</div>
+                    <h2 class="axe-title">L'ARCHIVE NUMÉRIQUE</h2>
+                    
+                    <div class="axe-meta" style="margin-top: 1rem;">
+                        <div class="meta-item">
+                            <strong>Morphologie & Logotype</strong>
+                            <p>Utilisation de bordures très fines (1px), grilles apparentes type tableur, alignement chirurgical. <strong>Pourquoi ?</strong> Cela donne une dimension professionnelle et scientifique au travail photographique, montrant que l'imperfection visuelle est un choix maîtrisé, pas un accident.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE ANATOMIE : GRILLE DE PRÉCISION -->
+                <div class="anatomy-container" style="margin-top: 0;">
+                    <!-- Spécimen Typo -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Pacte Typographique</div>
+                        <div class="specimen-wrapper">
+                            <div class="specimen-glyph" style="font-family: var(--font-space); font-weight: 700;">[Aa]</div>
+                            <div class="specimen-meta">
+                                <span class="specimen-name">Space Grotesk Light</span>
+                                <span class="specimen-role">Sans-Serif Technique</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Le côté rigide et utilitaire montre une approche documentaire assumée, où l'image prime sur le design.</p>
+                    </div>
+                    <!-- Palette Visuelle -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Pacte Chromatique</div>
+                        <div class="palette-wrapper">
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #070708;" title="Dominante"></div>
+                                <span class="palette-weight">60%</span>
+                            </div>
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #F2F2F2;" title="Médiane"></div>
+                                <span class="palette-weight">30%</span>
+                            </div>
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: var(--accent-orange);" title="Accent"></div>
+                                <span class="palette-weight">10%</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Un contraste binaire (Noir profond/Blanc) accentué par un Orange de sécurité (warning) typique des laboratoires photos.</p>
+                    </div>
+                    <!-- Mouvement Motion -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Comportement Motion</div>
+                        <div class="motion-wrapper">
+                            <div class="motion-preview">
+                                <div class="motion-indicator-dot" style="background-color: var(--accent-orange); animation-name: ease-brutal;"></div>
+                            </div>
+                            <div class="motion-info">
+                                <span class="motion-name">Flash & Cut</span>
+                                <span class="motion-desc">Coupures sèches comme un obturateur</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Pas de fioriture ni de fondu poétique. Les animations claquent de manière sèche, mimant l'obturateur d'un appareil argentique.</p>
+                    </div>
+                    <!-- Identité Verbale -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Signature Verbale</div>
+                        <div class="verbal-wrapper">
+                            <span class="archetype-badge">LE DOCUMENTALISTE</span>
+                            <p class="verbal-quote">"L'archive visuelle du réel."</p>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Un ton direct et factuel. On ne vend pas du rêve artificiel, on capture le réel tel qu'il est, de manière quasi scientifique.</p>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDERS AXE 1 -->
+                <div class="assets-placeholders">
+                    <!-- AXE 1 LOGOS -->
+                    <div class="placeholder-box">
+                        <span>[ESPACE RÉSERVÉ]<br>Explorations de Logo (SVG)</span>
+                    </div>
+                    <!-- AXE 1 LOGOS END -->
+                    <!-- AXE 1 MOCKUPS -->
+                    <div class="placeholder-box">
+                        <span>[ESPACE RÉSERVÉ]<br>Mises en situation & Mockups</span>
+                    </div>
+                    <!-- AXE 1 MOCKUPS END -->
+                </div>
+            </div>
+
+            <!-- AXE 2 -->
+            <div class="axe-row">
+                <div class="axe-info">
+                    <div class="axe-kicker" style="color: var(--accent-red);">Axe 02</div>
+                    <h2 class="axe-title">LE MAGAZINE INDÉPENDANT</h2>
+                    
+                    <div class="axe-meta" style="margin-top: 1rem;">
+                        <div class="meta-item">
+                            <strong>Morphologie & Logotype</strong>
+                            <p>Mise en page asymétrique fine, grands espaces blancs de respiration (negative space), minimalisme élégant. <strong>Pourquoi ?</strong> Cela élève le travail de Florian Puech au niveau des séries haute couture et des galeries d'art contemporain. Le design s'efface pour laisser s'exprimer la délicatesse et le grain argentique de l'image.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE ANATOMIE : GRILLE DE PRÉCISION -->
+                <div class="anatomy-container" style="margin-top: 0;">
+                    <!-- Spécimen Typo -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Pacte Typographique</div>
+                        <div class="specimen-wrapper">
+                            <div class="specimen-glyph" style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400;">[Aa]</div>
+                            <div class="specimen-meta">
+                                <span class="specimen-name">PP Editorial New</span>
+                                <span class="specimen-role">Sérif Élégant</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Le Sérif (empattements) apporte le prestige et le classicisme des magazines de mode, contrastant avec le brut des photos.</p>
+                    </div>
+                    <!-- Palette Visuelle -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Pacte Chromatique</div>
+                        <div class="palette-wrapper">
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #F4F0EB;" title="Dominante"></div>
+                                <span class="palette-weight">60%</span>
+                            </div>
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #1A1A1A;" title="Médiane"></div>
+                                <span class="palette-weight">30%</span>
+                            </div>
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #8B7355;" title="Accent"></div>
+                                <span class="palette-weight">10%</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> L'utilisation du crème (Warm White) et du taupe adoucit l'aspect parfois cru de l'argentique, plongeant le travail dans le haut de gamme.</p>
+                    </div>
+                    <!-- Mouvement Motion -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Comportement Motion</div>
+                        <div class="motion-wrapper">
+                            <div class="motion-preview">
+                                <div class="motion-indicator-dot" style="background-color: #8B7355; animation-name: ease-cinematic;"></div>
+                            </div>
+                            <div class="motion-info">
+                                <span class="motion-name">Fondu Lent</span>
+                                <span class="motion-desc">Comme on tourne la page d'un beau livre</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Un mouvement cinématique et onirique, privilégiant la contemplation de l'œuvre plutôt que la dynamique agressive.</p>
+                    </div>
+                    <!-- Identité Verbale -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Signature Verbale</div>
+                        <div class="verbal-wrapper">
+                            <span class="archetype-badge" style="background: rgba(139, 115, 85, 0.08); border-color: rgba(139, 115, 85, 0.2); color: #8B7355;">L'ESTHÈTE</span>
+                            <p class="verbal-quote">"Le silence autour de l'image."</p>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> L'idée est de s'effacer pour laisser parler l'art. Un ton poétique qui suggère plus qu'il n'impose.</p>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDERS AXE 2 -->
+                <div class="assets-placeholders">
+                    <!-- AXE 2 LOGOS -->
+                    <div class="placeholder-box">
+                        <span>[ESPACE RÉSERVÉ]<br>Explorations de Logo (SVG)</span>
+                    </div>
+                    <!-- AXE 2 LOGOS END -->
+                    <!-- AXE 2 MOCKUPS -->
+                    <div class="placeholder-box">
+                        <span>[ESPACE RÉSERVÉ]<br>Mises en situation & Mockups</span>
+                    </div>
+                    <!-- AXE 2 MOCKUPS END -->
+                </div>
+            </div>
+
+            <!-- AXE 3 -->
+            <div class="axe-row">
+                <div class="axe-info">
+                    <div class="axe-kicker" style="color: #FFFFFF;">Axe 03</div>
+                    <h2 class="axe-title">LE FANZINE UNDERGROUND</h2>
+                    
+                    <div class="axe-meta" style="margin-top: 1rem;">
+                        <div class="meta-item">
+                            <strong>Morphologie & Logotype</strong>
+                            <p>Textures de photocopie à haut contraste, collages asymétriques superposés, contours déchirés et touches de feutre rouge. <strong>Pourquoi ?</strong> C'est la signature de l'urgence créative des concerts underground, de la culture foot populaire (PSG ultras) et de l'authenticité DIY. C'est brut, fort et impossible à ignorer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODULE ANATOMIE : GRILLE DE PRÉCISION -->
+                <div class="anatomy-container" style="margin-top: 0;">
+                    <!-- Spécimen Typo -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Pacte Typographique</div>
+                        <div class="specimen-wrapper">
+                            <div class="specimen-glyph" style="font-family: 'Arial Black', Impact, sans-serif; font-weight: 900; letter-spacing: -0.05em; font-style: normal;">[Xx]</div>
+                            <div class="specimen-meta">
+                                <span class="specimen-name">Druk Wide / Permanent Marker</span>
+                                <span class="specimen-role">Brutaliste / Manuscrit</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Des lettres gigantesques, écrasantes, couplées à du feutre manuscrit pour revendiquer l'authenticité DIY de la culture fanzine/punk.</p>
+                    </div>
+                    <!-- Palette Visuelle -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Pacte Chromatique</div>
+                        <div class="palette-wrapper">
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #050505;" title="Dominante"></div>
+                                <span class="palette-weight">60%</span>
+                            </div>
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #EAEAEA;" title="Médiane"></div>
+                                <span class="palette-weight">30%</span>
+                            </div>
+                            <div class="palette-pill">
+                                <div class="palette-color" style="background-color: #FF2A00;" title="Accent"></div>
+                                <span class="palette-weight">10%</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Un contraste Noir Profond / Blanc crayeux d'une violence assumée (Rouge Sang), pour capter l'œil instantanément et rejeter les codes 'sages'.</p>
+                    </div>
+                    <!-- Mouvement Motion -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Comportement Motion</div>
+                        <div class="motion-wrapper">
+                            <div class="motion-preview">
+                                <div class="motion-indicator-dot" style="background-color: #FF2A00; animation-name: ease-organic;"></div>
+                            </div>
+                            <div class="motion-info">
+                                <span class="motion-name">Glitch & Impact</span>
+                                <span class="motion-desc">Coupures brutales, flash aveuglant</span>
+                            </div>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Un mouvement chaotique, imparfait. Le glitch et le flash reproduisent l'urgence et l'énergie organique du terrain (les concerts, les foules).</p>
+                    </div>
+                    <!-- Identité Verbale -->
+                    <div class="anatomy-card">
+                        <div class="anatomy-card-title">Signature Verbale</div>
+                        <div class="verbal-wrapper">
+                            <span class="archetype-badge" style="background: rgba(255, 42, 0, 0.08); border-color: rgba(255, 42, 0, 0.2); color: #FF2A00;">L'INSURGÉ</span>
+                            <p class="verbal-quote">"Arracher l'image au réel."</p>
+                        </div>
+                        <p class="anatomy-why" style="margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted); line-height: 1.4;"><strong>Pourquoi ?</strong> Un ton subversif, brut, sans filtre. Il ne s'agit pas de créer de belles images, mais de témoigner d'une vérité crue.</p>
+                    </div>
+                </div>
+
+                <!-- PLACEHOLDERS AXE 3 -->
+                <div class="assets-placeholders">
+                    <!-- AXE 3 LOGOS -->
+                    <div class="placeholder-box">
+                        <span>[ESPACE RÉSERVÉ]<br>Explorations de Logo (SVG)</span>
+                    </div>
+                    <!-- AXE 3 LOGOS END -->
+                    <!-- AXE 3 MOCKUPS -->
+                    <div class="placeholder-box">
+                        <span>[ESPACE RÉSERVÉ]<br>Mises en situation & Mockups</span>
+                    </div>
+                    <!-- AXE 3 MOCKUPS END -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Simulation de Marché & Focus Group -->
+    <div class="container" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="focus-group-section">
+            <h2 style="text-align: center; margin-bottom: 1rem;">👥 Simulation de Marché & Focus Group</h2>
+            <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem; text-align: center; font-size: 1.1rem;">
+                Pour confronter nos intuitions à la réalité du marché, nous avons simulé la réaction de vos 3 profils cibles majeurs face aux 3 axes créatifs. Voici leur verdict d'adhésion :
+            </p>
+
+            <div class="personas-grid">
+                <!-- Persona 1 : Camille -->
+                <div class="persona-card" data-persona="1">
+                    <div class="persona-header">
+                        <div class="persona-avatar" style="background: linear-gradient(135deg, var(--accent-red), #5c0000);">[P1]</div>
+                        <div class="persona-meta">
+                            <h3>Camille</h3>
+                            <span class="persona-title">Directrice Artistique Mode</span>
+                        </div>
+                    </div>
+                    <p class="persona-psychology"><strong>Profil :</strong> Recherche des esthétiques éditoriales, minimalistes et élégantes pour des marques haut de gamme.</p>
+                    <div class="scores-container">
+                        <div class="score-row">
+                            <span>Axe 01 : L'Archive Numérique</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 70%;"></div></div>
+                            <span class="score-number">7.0/10</span>
+                        </div>
+                        <div class="score-row">
+                            <span>Axe 02 : Le Magazine Indépendant</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 95%;"></div></div>
+                            <span class="score-number">9.5/10</span>
+                        </div>
+                        <div class="score-row">
+                            <span>Axe 03 : Le Fanzine Underground</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 45%;"></div></div>
+                            <span class="score-number">4.5/10</span>
+                        </div>
+                    </div>
+                    <div class="persona-critique" data-axe="1">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 1 :</span>
+                        <p class="critique-quote">"Intéressant, très propre, mais ça manque un peu de poésie pour la mode."</p>
+                    </div>
+                    <div class="persona-critique active" data-axe="2">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 2 (Recommandé) :</span>
+                        <p class="critique-quote">"Sublime. Ce travail sur les blancs et la typo sérif met parfaitement en valeur la texture argentique. C'est très 'Haute Couture'."</p>
+                    </div>
+                    <div class="persona-critique" data-axe="3">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 3 :</span>
+                        <p class="critique-quote">"Beaucoup trop agressif pour ma clientèle. On perd la finesse sous le rouge."</p>
+                    </div>
+                </div>
+
+                <!-- Persona 2 : Thomas -->
+                <div class="persona-card" data-persona="2">
+                    <div class="persona-header">
+                        <div class="persona-avatar" style="background: linear-gradient(135deg, #FF6B6B, #C72C41);">[P2]</div>
+                        <div class="persona-meta">
+                            <h3>Thomas</h3>
+                            <span class="persona-title">Producteur Exécutif</span>
+                        </div>
+                    </div>
+                    <p class="persona-psychology"><strong>Profil :</strong> Cherche l'efficacité, la technique et le sérieux pour justifier des budgets auprès des agences.</p>
+                    <div class="scores-container">
+                        <div class="score-row">
+                            <span>Axe 01 : L'Archive Numérique</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 90%;"></div></div>
+                            <span class="score-number">9.0/10</span>
+                        </div>
+                        <div class="score-row">
+                            <span>Axe 02 : Le Magazine Indépendant</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 60%;"></div></div>
+                            <span class="score-number">6.0/10</span>
+                        </div>
+                        <div class="score-row">
+                            <span>Axe 03 : Le Fanzine Underground</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 50%;"></div></div>
+                            <span class="score-number">5.0/10</span>
+                        </div>
+                    </div>
+                    <div class="persona-critique active" data-axe="1">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 1 (Recommandé) :</span>
+                        <p class="critique-quote">"Parfait. C'est structuré, ça fait extrêmement pro et rassurant. L'approche documentaliste valorise le sérieux de la démarche."</p>
+                    </div>
+                    <div class="persona-critique" data-axe="2">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 2 :</span>
+                        <p class="critique-quote">"Un peu trop 'arty' pour des campagnes commerciales directes, ça manque de punch."</p>
+                    </div>
+                    <div class="persona-critique" data-axe="3">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 3 :</span>
+                        <p class="critique-quote">"Impossible à vendre à mes clients corpo. C'est beaucoup trop clivant."</p>
+                    </div>
+                </div>
+
+                <!-- Persona 3 : Yannick -->
+                <div class="persona-card" data-persona="3">
+                    <div class="persona-header">
+                        <div class="persona-avatar" style="background: linear-gradient(135deg, #e5c158, #9b720b);">[P3]</div>
+                        <div class="persona-meta">
+                            <h3>Yannick</h3>
+                            <span class="persona-title">Organisateur Indé / Label</span>
+                        </div>
+                    </div>
+                    <p class="persona-psychology"><strong>Profil :</strong> Produit des événements bruts, des concerts, et recherche l'énergie, l'authenticité de la rue sans filtre.</p>
+                    <div class="scores-container">
+                        <div class="score-row">
+                            <span>Axe 01 : L'Archive Numérique</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 50%;"></div></div>
+                            <span class="score-number">5.0/10</span>
+                        </div>
+                        <div class="score-row">
+                            <span>Axe 02 : Le Magazine Indépendant</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 65%;"></div></div>
+                            <span class="score-number">6.5/10</span>
+                        </div>
+                        <div class="score-row">
+                            <span>Axe 03 : Le Fanzine Underground</span>
+                            <div class="score-bar"><div class="score-fill" style="width: 98%;"></div></div>
+                            <span class="score-number">9.8/10</span>
+                        </div>
+                    </div>
+                    <div class="persona-critique" data-axe="1">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 1 :</span>
+                        <p class="critique-quote">"Trop froid, trop sage. On dirait un tableau Excel, ça manque de sueur."</p>
+                    </div>
+                    <div class="persona-critique" data-axe="2">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 2 :</span>
+                        <p class="critique-quote">"C'est beau, mais c'est pour les galeries parisiennes, pas pour la fosse d'un concert."</p>
+                    </div>
+                    <div class="persona-critique active" data-axe="3">
+                        <span class="critique-kicker">Le Verdict sur l'Axe 3 (Recommandé) :</span>
+                        <p class="critique-quote">"Une claque visuelle ! L'urgence, la brutalité des contrastes, le rouge sang... C'est l'énergie pure de la scène."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Boutons de filtrage dynamiques par Axe -->
+            <div class="axis-selector-bar">
+                <span style="color: var(--text-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 1rem;">Filtrer les verdicts par :</span>
+                <button class="axis-filter-btn active" data-filter-axe="all">Leur Favori</button>
+                <button class="axis-filter-btn" data-filter-axe="1">Axe 1</button>
+                <button class="axis-filter-btn" data-filter-axe="2">Axe 2</button>
+                <button class="axis-filter-btn" data-filter-axe="3">Axe 3</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brand Sandbox / Bac à Sable Interactif -->
+    <div class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="sandbox-section">
+            <h2 style="text-align: center; margin-bottom: 1rem;">⚡ Le Spécimen Interactif (Brand Sandbox)</h2>
+            <p style="color: var(--text-muted); max-width: 800px; margin: 0 auto 3rem; text-align: center; font-size: 1.1rem;">
+                Saisissez votre nom ou un slogan pour l'expérimenter en temps réel sous les codes typographiques et chromatiques de nos 3 directions :
+            </p>
+            
+            <div class="sandbox-input-wrapper">
+                <input type="text" id="sandbox-input" value="FLORIAN PUECH" placeholder="Saisissez votre marque..." maxlength="40" />
+                <div class="sandbox-presets">
+                    <button class="preset-btn active" data-preset="FLORIAN PUECH">NOM</button>
+                    <button class="preset-btn" data-preset="MODE. PLATEAUX. LIVE.">SLOGAN</button>
+                    <button class="preset-btn" data-preset="PHOTOGRAPHIE">BASELINE</button>
+                    <button class="preset-btn" data-preset="VOL. 01 / EP. 03">NUMÉRO</button>
+                </div>
+            </div>
+
+            <div class="sandbox-grid">
+                <!-- Sandbox Axe 1 -->
+                <div class="sandbox-card" data-sandbox-axe="1">
+                    <div class="sandbox-card-header">
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                            <span class="sandbox-axe-num">Axe 01</span>
+                            <h3 style="margin: 0;">[Titre Axe 1]</h3>
+                        </div>
+                        <div class="sandbox-font-selector">
+                            <button class="font-toggle-btn active" data-font="primary">Logo</button>
+                            <button class="font-toggle-btn" data-font="secondary">Accomp.</button>
+                        </div>
+                    </div>
+                    <div class="sandbox-preview-box">
+                        <div class="sandbox-display-text" id="sandbox-display-1">FLORIAN PUECH</div>
+                    </div>
+                    <div class="sandbox-color-selector">
+                        <button class="color-dot active" data-bg="#000" data-fg="#FFF" style="background: #000; border: 1px solid rgba(255,255,255,0.2);"></button>
+                        <button class="color-dot" data-bg="#F2F2F2" data-fg="#0B0B0B" style="background: #F2F2F2; border: 1px solid rgba(0,0,0,0.2);"></button>
+                        <button class="color-dot" data-bg="#FD3A20" data-fg="#0B0B0B" style="background: #FD3A20; border: 1px solid rgba(0,0,0,0.2);"></button>
+                    </div>
+                    <div class="sandbox-specs">
+                        <span>Typographie : Space Grotesk Light / Inter Mono</span>
+                        <span>Contraste : Extrême (Noir Profond / Néon)</span>
+                    </div>
+                </div>
+
+                <!-- Sandbox Axe 2 -->
+                <div class="sandbox-card" data-sandbox-axe="2">
+                    <div class="sandbox-card-header" style="border-bottom-color: #8B7355;">
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                            <span class="sandbox-axe-num" style="color: #8B7355;">Axe 02</span>
+                            <h3 style="margin: 0;">LE MAGAZINE INDÉPENDANT</h3>
+                        </div>
+                        <div class="sandbox-font-selector">
+                            <button class="font-toggle-btn active" data-font="primary">Logo</button>
+                            <button class="font-toggle-btn" data-font="secondary">Accomp.</button>
+                        </div>
+                    </div>
+                    <div class="sandbox-preview-box" style="background: #F4F0EB;">
+                        <div class="sandbox-display-text" id="sandbox-display-2" style="color: #1A1A1A;">FLORIAN PUECH</div>
+                    </div>
+                    <div class="sandbox-color-selector">
+                        <button class="color-dot active" data-bg="#F4F0EB" data-fg="#1A1A1A" style="background: #F4F0EB; border: 1px solid #1A1A1A;"></button>
+                        <button class="color-dot" data-bg="#1A1A1A" data-fg="#F4F0EB" style="background: #1A1A1A; border: 1px solid #F4F0EB;"></button>
+                        <button class="color-dot" data-bg="#8B7355" data-fg="#F4F0EB" style="background: #8B7355; border: 1px solid #F4F0EB;"></button>
+                    </div>
+                    <div class="sandbox-specs">
+                        <span style="color: #8B7355;">Typographie : PP Editorial New</span>
+                        <span>Contraste : Élégant (Crème / Charbon)</span>
+                    </div>
+                </div>
+
+                <!-- Sandbox Axe 3 -->
+                <div class="sandbox-card" data-sandbox-axe="3">
+                    <div class="sandbox-card-header" style="border-bottom-color: #FF2A00;">
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                            <span class="sandbox-axe-num" style="color: #FF2A00;">Axe 03</span>
+                            <h3 style="margin: 0;">LE FANZINE UNDERGROUND</h3>
+                        </div>
+                        <div class="sandbox-font-selector">
+                            <button class="font-toggle-btn active" data-font="primary">Logo</button>
+                            <button class="font-toggle-btn" data-font="secondary">Accomp.</button>
+                        </div>
+                    </div>
+                    <div class="sandbox-preview-box" style="background: #050505;">
+                        <div class="sandbox-display-text" id="sandbox-display-3" style="color: #FF2A00;">FLORIAN PUECH</div>
+                    </div>
+                    <div class="sandbox-color-selector">
+                        <button class="color-dot active" data-bg="#050505" data-fg="#FF2A00" style="background: #050505; border: 1px solid #FF2A00;"></button>
+                        <button class="color-dot" data-bg="#FF2A00" data-fg="#050505" style="background: #FF2A00; border: 1px solid #050505;"></button>
+                        <button class="color-dot" data-bg="#EAEAEA" data-fg="#050505" style="background: #EAEAEA; border: 1px solid #050505;"></button>
+                    </div>
+                    <div class="sandbox-specs">
+                        <span style="color: #FF2A00;">Typographie : Druk Wide / Permanent Marker</span>
+                        <span>Contraste : Violent (Noir Profond / Rouge Sang)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conclusion Méthodologique & Feedback Interactif -->
+    <div class="container" style="padding-top: 2rem;">
+        <div class="feedback-section" style="text-align: center;">
+            <h2>Prochaine Étape : Votre Ressenti</h2>
+            <p style="color: var(--text-muted); max-width: 700px; margin: 1rem auto 0; font-size: 1.1rem;">
+                Ces directions ne sont pas définitives. Elles forment un cadre de réflexion pour sculpter l'identité finale. Sélectionnez l'axe qui résonne le plus avec votre vision pour structurer nos échanges :
+            </p>
+
+            <div class="feedback-grid">
+                <!-- Option Axe 1 -->
+                <div class="feedback-card" data-axe="1">
+                    <h3>Axe 01 : L'ARCHIVE NUMÉRIQUE</h3>
+                    <p>[Description courte : En quoi cet axe répond au brief et se distingue stratégiquement.]</p>
+                    <div class="slider-container">
+                        <div class="slider-label">
+                            <span>[Attribut Min]</span>
+                            <span>[Attribut Max]</span>
+                        </div>
+                        <div class="slider-bar">
+                            <div class="slider-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option Axe 2 -->
+                <div class="feedback-card" data-axe="2">
+                    <h3>Axe 02 : LE MAGAZINE INDÉPENDANT</h3>
+                    <p>[Description courte : En quoi cet axe répond au brief et se distingue stratégiquement.]</p>
+                    <div class="slider-container">
+                        <div class="slider-label">
+                            <span>[Attribut Min]</span>
+                            <span>[Attribut Max]</span>
+                        </div>
+                        <div class="slider-bar">
+                            <div class="slider-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option Axe 3 -->
+                <div class="feedback-card" data-axe="3">
+                    <h3>Axe 03 : LE FANZINE UNDERGROUND</h3>
+                    <p>[Description courte : En quoi cet axe répond au brief et se distingue stratégiquement.]</p>
+                    <div class="slider-container">
+                        <div class="slider-label">
+                            <span>[Attribut Min]</span>
+                            <span>[Attribut Max]</span>
+                        </div>
+                        <div class="slider-bar">
+                            <div class="slider-fill" style="width: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="color: #FFF; font-weight: 600; margin-top: 3rem; font-family: var(--font-space); font-size: 0.9rem; letter-spacing: 0.05em; text-transform: uppercase;">
+                Une fois votre choix esquissé, nous passerons à la vectorisation finale et au déploiement du Brand Book.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        STUDIO DJEZO — SYSTÈME CRÉATIF ENGAGÉ.
+    </footer>
+
+    <!-- Smart Cursor & Logique Interactive JS -->
+    <script>
+        // Moteur Audio Haptique Premium (Web Audio API)
+        class StudioAudioEngine {
+            constructor() {
+                this.ctx = null;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    try {
+                        this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    } catch (e) {
+                        console.warn("L'API Web Audio n'est pas supportée.");
+                    }
+                }
+                if (this.ctx && this.ctx.state === 'suspended') {
+                    this.ctx.resume();
+                }
+            }
+
+            playTick() {
+                this.init();
+                if (!this.ctx || this.ctx.state === 'suspended') return;
+                
+                try {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(1000, this.ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(700, this.ctx.currentTime + 0.02);
+                    
+                    gain.gain.setValueAtTime(0.003, this.ctx.currentTime); // Volume ultra-subtil
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.02);
+                    
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + 0.02);
+                } catch (e) {}
+            }
+
+            playClick() {
+                this.init();
+                if (!this.ctx || this.ctx.state === 'suspended') return;
+                
+                try {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(120, this.ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(30, this.ctx.currentTime + 0.12);
+                    
+                    gain.gain.setValueAtTime(0.04, this.ctx.currentTime); // Bump mat et rond
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.12);
+                    
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + 0.12);
+                } catch (e) {}
+            }
+        }
+
+        const audio = new StudioAudioEngine();
+
+        // Activation de l'AudioContext sur la première interaction de l'utilisateur
+        const unlockAudio = () => {
+            audio.init();
+            window.removeEventListener('click', unlockAudio);
+            window.removeEventListener('keydown', unlockAudio);
+            window.removeEventListener('touchstart', unlockAudio);
+            window.removeEventListener('mousemove', unlockAudio);
+        };
+        window.addEventListener('click', unlockAudio);
+        window.addEventListener('keydown', unlockAudio);
+        window.addEventListener('touchstart', unlockAudio);
+        window.addEventListener('mousemove', unlockAudio);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smart Cursor personnalisé
+            const cursor = document.createElement('div');
+            cursor.className = 'custom-cursor';
+            document.body.appendChild(cursor);
+
+            // Activer le curseur au premier mouvement de souris
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.display = 'block';
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.addEventListener('mouseleave', () => {
+                cursor.style.display = 'none';
+            });
+
+            // Effet Hover magnétique sur éléments interactifs
+            const addHoverEffect = () => {
+                const targets = document.querySelectorAll('a, button, .axe-visual-wrapper, .feedback-card, .logo-container img, .query-tag, .axis-filter-btn, #sandbox-input, .sandbox-card, .preset-btn, .font-toggle-btn, .color-dot');
+                targets.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursor.classList.add('hovered');
+                        audio.playTick();
+                    });
+                    el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+                });
+            };
+
+            addHoverEffect();
+
+            // Gestion de la sélection interactive des Axes
+            const feedbackCards = document.querySelectorAll('.feedback-card');
+            feedbackCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    audio.playClick();
+                    feedbackCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    
+                    // Effet de choc visuel sur le curseur
+                    cursor.style.width = '64px';
+                    cursor.style.height = '64px';
+                    setTimeout(() => {
+                        cursor.style.width = '48px';
+                        cursor.style.height = '48px';
+                    }, 150);
+                });
+            });
+
+            // Script d'interaction Pinterest
+            const queryTags = document.querySelectorAll('.query-tag');
+            queryTags.forEach(tag => {
+                tag.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    audio.playClick();
+                    const query = tag.getAttribute('data-query');
+                    if (!query) return;
+                    
+                    // Copie dans le presse-papier
+                    navigator.clipboard.writeText(query).then(() => {
+                        const originalText = tag.innerHTML;
+                        tag.innerHTML = '✅ Copié !';
+                        tag.style.borderColor = 'rgba(75, 181, 67, 0.4)';
+                        tag.style.color = '#4bb543';
+                        tag.style.background = 'rgba(75, 181, 67, 0.05)';
+                        
+                        setTimeout(() => {
+                            tag.innerHTML = originalText;
+                            tag.style.borderColor = '';
+                            tag.style.color = '';
+                            tag.style.background = '';
+                        }, 1000);
+                    });
+                    
+                    // Ouvrir Pinterest dans un nouvel onglet
+                    const searchUrl = `https://www.pinterest.fr/search/pins/?q=${encodeURIComponent(query)}`;
+                    window.open(searchUrl, '_blank');
+                });
+            });
+
+            // Script de filtrage des critiques du Focus Group
+            const filterBtns = document.querySelectorAll('.axis-filter-btn');
+            const critiques = document.querySelectorAll('.persona-critique');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    audio.playClick();
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const filterAxe = btn.getAttribute('data-filter-axe');
+                    
+                    critiques.forEach(critique => {
+                        const axe = critique.getAttribute('data-axe');
+                        if (filterAxe === 'all') {
+                            // En mode "Tous" (Leur Favori), on réactive l'axe favori de chaque persona
+                            const personaCard = critique.closest('.persona-card');
+                            const personaId = personaCard.getAttribute('data-persona');
+                            if (axe === personaId) {
+                                critique.classList.add('active');
+                            } else {
+                                critique.classList.remove('active');
+                            }
+                        } else {
+                            // Sinon on affiche l'avis sur l'axe filtré
+                            if (axe === filterAxe) {
+                                critique.classList.add('active');
+                            } else {
+                                critique.classList.remove('active');
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Script Brand Sandbox V2.0
+            const sandboxInput = document.getElementById('sandbox-input');
+            const display1 = document.getElementById('sandbox-display-1');
+            const display2 = document.getElementById('sandbox-display-2');
+            const display3 = document.getElementById('sandbox-display-3');
+            const presetBtns = document.querySelectorAll('.preset-btn');
+            const fontToggleBtns = document.querySelectorAll('.font-toggle-btn');
+            const colorDots = document.querySelectorAll('.color-dot');
+
+            const adjustFontSizes = () => {
+                const displays = [
+                    { el: display1, axe: '1', baseRem: 2.5 },
+                    { el: display2, axe: '2', baseRem: 1.8 },
+                    { el: display3, axe: '3', baseRem: 2.2 }
+                ];
+                displays.forEach(({ el, axe, baseRem }) => {
+                    if (!el) return;
+                    let text = el.textContent || '';
+                    let textLength = text.length;
+                    
+                    // Adjust base size if secondary font is selected
+                    let currentBase = baseRem;
+                    if (el.classList.contains('font-secondary')) {
+                        if (axe === '1') currentBase = 1.8;
+                        else if (axe === '2') currentBase = 1.6;
+                        else if (axe === '3') currentBase = 1.6;
+                    }
+                    
+                    // Scale formula
+                    let shrink = 1.0;
+                    if (textLength > 10) {
+                        shrink = Math.max(0.45, 1 - (textLength - 10) * 0.03);
+                    }
+                    el.style.fontSize = (currentBase * shrink) + 'rem';
+                });
+            };
+
+            const updateSandboxDisplays = (val) => {
+                if (!val.trim()) {
+                    val = "FLORIAN PUECH";
+                }
+                
+                // Set text with respective default casing behaviors
+                if (display1) display1.textContent = val.toUpperCase();
+                
+                if (display2) {
+                    display2.textContent = val.toUpperCase();
+                }
+                
+                if (display3) {
+                    // For Axe 3, primary is lowercase for autograph, secondary is uppercase
+                    if (display3.classList.contains('font-secondary')) {
+                        display3.textContent = val.toUpperCase();
+                    } else {
+                        display3.textContent = val.toLowerCase();
+                    }
+                }
+                
+                adjustFontSizes();
+            };
+
+            if (sandboxInput) {
+                sandboxInput.addEventListener('input', (e) => {
+                    // Reset preset active state
+                    presetBtns.forEach(btn => btn.classList.remove('active'));
+                    updateSandboxDisplays(e.target.value);
+                });
+            }
+
+            // Presets Click
+            presetBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    audio.playClick();
+                    presetBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const val = btn.getAttribute('data-preset');
+                    if (sandboxInput) {
+                        sandboxInput.value = val;
+                        updateSandboxDisplays(val);
+                    }
+                });
+            });
+
+            // Font Toggles Click
+            fontToggleBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    audio.playClick();
+                    const card = btn.closest('.sandbox-card');
+                    const selector = card.querySelector('.sandbox-font-selector');
+                    const toggleBtns = selector.querySelectorAll('.font-toggle-btn');
+                    toggleBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    const fontType = btn.getAttribute('data-font');
+                    const display = card.querySelector('.sandbox-display-text');
+                    
+                    if (fontType === 'secondary') {
+                        display.classList.add('font-secondary');
+                    } else {
+                        display.classList.remove('font-secondary');
+                    }
+                    
+                    if (sandboxInput) {
+                        updateSandboxDisplays(sandboxInput.value);
+                    } else {
+                        updateSandboxDisplays("FLORIAN PUECH");
+                    }
+                });
+            });
+
+            // Color Toggles Click
+            colorDots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    audio.playClick();
+                    const card = dot.closest('.sandbox-card');
+                    const selector = card.querySelector('.sandbox-color-selector');
+                    const dots = selector.querySelectorAll('.color-dot');
+                    dots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                    
+                    const bg = dot.getAttribute('data-bg');
+                    const fg = dot.getAttribute('data-fg');
+                    const previewBox = card.querySelector('.sandbox-preview-box');
+                    const displayText = card.querySelector('.sandbox-display-text');
+                    
+                    previewBox.style.backgroundColor = bg;
+                    displayText.style.color = fg;
+                    
+                    // Specific border color updates for Axe 2 frame
+                    if (card.getAttribute('data-sandbox-axe') === '2') {
+                        if (fg === '#E60000') {
+                            displayText.style.borderColor = 'rgba(230, 0, 0, 0.2)';
+                        } else {
+                            displayText.style.borderColor = fg + '33'; // low opacity
+                        }
+                    }
+                });
+            });
+            
+            // Relancer les écouteurs sur éléments créés ou modifiés dynamiquement
+            const observer = new MutationObserver(addHoverEffect);
+            observer.observe(document.body, { childList: true, subtree: true });
+            
+            // ==========================================
+            // LIGHTBOX MODAL SYSTÈME POUR LES MOODBOARDS
+            // ==========================================
+            (function() {
+                // 1. Injecter le CSS de la Lightbox
+                const style = document.createElement('style');
+                style.innerHTML = `
+                    .custom-lightbox {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(7, 7, 8, 0.95);
+                        z-index: 99999;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        opacity: 0;
+                        pointer-events: none;
+                        transition: opacity 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                    }
+                    .custom-lightbox.active {
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                    .custom-lightbox-img {
+                        max-width: 90%;
+                        max-height: 85vh;
+                        object-fit: contain;
+                        border-radius: 4px;
+                        box-shadow: 0 30px 70px rgba(0,0,0,0.8);
+                        transform: scale(0.96);
+                        transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+                        border: 1px solid rgba(255, 255, 255, 0.08);
+                    }
+                    .custom-lightbox.active .custom-lightbox-img {
+                        transform: scale(1);
+                    }
+                    .custom-lightbox-close {
+                        position: absolute;
+                        top: 2rem;
+                        right: 2rem;
+                        background: none;
+                        border: none;
+                        color: #FFFFFF;
+                        font-size: 3rem;
+                        cursor: pointer;
+                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                        font-weight: 100;
+                        line-height: 0.5;
+                        opacity: 0.5;
+                        transition: opacity 0.2s, transform 0.2s;
+                    }
+                    .custom-lightbox-close:hover {
+                        opacity: 1;
+                        transform: scale(1.1);
+                    }
+                    .custom-lightbox-caption {
+                        position: absolute;
+                        bottom: 2rem;
+                        color: rgba(255, 255, 255, 0.6);
+                        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+                        font-size: 0.75rem;
+                        letter-spacing: 0.15em;
+                        text-transform: uppercase;
+                        font-weight: 500;
+                        background: rgba(255, 255, 255, 0.05);
+                        padding: 0.5rem 1rem;
+                        border-radius: 30px;
+                        border: 1px solid rgba(255,255,255,0.05);
+                    }
+                    .moodboard-img {
+                        cursor: zoom-in !important;
+                        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease !important;
+                    }
+                    .moodboard-img:hover {
+                        filter: brightness(1.1);
+                    }
+                `;
+                document.head.appendChild(style);
+
+                // 2. Injecter le HTML de la Lightbox
+                const lightbox = document.createElement('div');
+                lightbox.className = 'custom-lightbox';
+                lightbox.innerHTML = `
+                    <button class="custom-lightbox-close" title="Fermer (Échap)">&times;</button>
+                    <img class="custom-lightbox-img" src="" alt="Zoom" />
+                    <div class="custom-lightbox-caption"></div>
+                `;
+                document.body.appendChild(lightbox);
+
+                const lightboxImg = lightbox.querySelector('.custom-lightbox-img');
+                const lightboxCaption = lightbox.querySelector('.custom-lightbox-caption');
+                const closeBtn = lightbox.querySelector('.custom-lightbox-close');
+
+                // 3. Gérer l'ouverture
+                const initLightboxForImages = () => {
+                    const images = document.querySelectorAll('.moodboard-img');
+                    images.forEach(img => {
+                        if (img.getAttribute('data-lightbox-active')) return;
+                        img.setAttribute('data-lightbox-active', 'true');
+
+                        img.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const src = img.getAttribute('src');
+                            const alt = img.getAttribute('alt') || 'Inspiration Visuelle';
+                            
+                            lightboxImg.setAttribute('src', src);
+                            
+                            // Formater proprement le nom du fichier ou de la légende
+                            const cleanAlt = alt.replace('Axe 1 - ', '').replace('Axe 2 - ', '').replace('Axe 3 - ', '');
+                            lightboxCaption.textContent = cleanAlt;
+                            
+                            lightbox.classList.add('active');
+                            document.body.style.overflow = 'hidden'; // Bloquer le scroll
+                        });
+                    });
+                };
+
+                initLightboxForImages();
+
+                // 4. Gérer la fermeture
+                const closeLightbox = () => {
+                    lightbox.classList.remove('active');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        lightboxImg.setAttribute('src', '');
+                    }, 350);
+                };
+
+                lightbox.addEventListener('click', closeLightbox);
+                closeBtn.addEventListener('click', closeLightbox);
+                
+                // Fermer avec la touche Échap
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                        closeLightbox();
+                    }
+                });
+
+                // Observer les changements dynamiques d'images (pour quand le script sync_moodboards s'exécute en dev)
+                const imgObserver = new MutationObserver(() => {
+                    initLightboxForImages();
+                });
+                imgObserver.observe(document.body, { childList: true, subtree: true });
+            })();
+        });
+    </script>
+
+</body>
+</html>
